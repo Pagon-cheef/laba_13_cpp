@@ -10,13 +10,13 @@ using namespace std;
 	Разработать программу, которая ...
 		1) вводит с консоли данные в массив из 8 элементов типа ZNAK
 		2) все записи в массиве должны быть упорядочить по дате рождения
-		3) вывод на экран пользователей, родившихся под знаком, который введен с клавиаатуры
+		3) выводит на экран пользователей, родившихся под знаком, который введен с клавиаатуры
 */
 
 
 // Функция, которая возвращает тип данных Znak!?
 Znak get_element() {
-	std::system("cls");
+	system("cls");
 
 	int data[3];
 	string name, surname, znak_name;
@@ -24,18 +24,22 @@ Znak get_element() {
 	cout << "\nDay: ";
 	cin >> data[0];
 	cin.get();
+	if (data[0] <=0 || data[0] >31) data[0] = 1;
+
 	cout << "Month: ";
 	cin >> data[1];
 	cin.get();
+	if (data[1] <= 0 || data[1] > 12) data[1] = 1;
+
 	cout << "Year: ";
 	cin >> data[2];
 	cin.get();
+	if (data[2] <= 190 || data[2] > 2022) data[1] = 2000;
+
 	cout << "\nEnter person name: ";
 	std::getline(cin, name);
 	cout << "Enter person surname: ";
 	std::getline(cin, surname);
-	//cout << "Enter person znak: ";
-	//getline(cin, znak_name);
 
 	// Переменная типа Znak
 	Znak element;
