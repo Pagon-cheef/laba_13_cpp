@@ -16,25 +16,48 @@ using namespace std;
 
 // Функция, которая возвращает тип данных Znak!?
 Znak get_element() {
-	system("cls");
 
 	int data[3];
 	string name, surname, znak_name;
-	cout << "\nYou need enter 3 int value(birthday)";
-	cout << "\nDay: ";
-	cin >> data[0];
-	cin.get();
-	if (data[0] <=0 || data[0] >31) data[0] = 1;
 
-	cout << "Month: ";
-	cin >> data[1];
-	cin.get();
-	if (data[1] <= 0 || data[1] > 12) data[1] = 1;
+	while (true)
+	{
+		system("cls");
+		cout << "\nYou need enter 3 int value(birthday)";
+		cout << "\nDay: ";
+		cin >> data[0];
+		cin.get();
+		if (data[0] <= 0 || data[0] > 31)
+		{
+			cout << "\nERROR! Wrong day\n\n";
+			system("pause");
+		}
+		else break;
+		continue;
+	}
+
+	while (true)
+	{
+		system("cls");
+		cout << "\nYou need enter 3 int value(birthday)";
+		cout << "\nDay: " << data[0];
+
+		cout << "\nMonth: ";
+		cin >> data[1];
+		cin.get();
+		if (data[1] <= 0 || data[1] > 12)
+		{
+			cout << "\nERROR! Wrong month\n\n";
+			system("pause");
+		}
+		else break;
+		continue;
+	}
 
 	cout << "Year: ";
 	cin >> data[2];
 	cin.get();
-	if (data[2] <= 190 || data[2] > 2022) data[1] = 2000;
+	//if (data[2] <= 190 || data[2] > 2022) data[1] = 2000;
 
 	cout << "\nEnter person name: ";
 	std::getline(cin, name);
